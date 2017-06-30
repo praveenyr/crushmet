@@ -3,12 +3,57 @@
   <head>
     <title>Crushmet</title>
     <%= csrf_meta_tags %>
-
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
+    <div class="navbar-wrapper">
+        <div class="container-fluid">
+            <nav class="navbar navbar-fixed-top">
+                <div class="container">
+                    <div id="navbar" class="navbar-collapse collapse">
+                        <ul class="nav navbar-nav">
+                            <li>
+                              <%= link_to root_path do %>
+                                  <span class="glyphicon glyphicon-home"></span> Home
+                              <% end %>
+                            </li>
+                        </ul>
+                        <ul class="nav navbar-nav pull-right">
+                            <li class="">
+                              <%= link_to new_user_session_path do %>
+                                <span class="glyphicon glyphicon-log-in"></span> Login
+                              <% end %>
+                            </li>
+                            <li class="">
+                              <%= link_to new_user_registration_path do %>
+                                <span class="glyphicon glyphicon-user"></span> Register
+                              <% end %>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </div>
+    <% if flash[:notice] %>
+      <div class="alert alert-success">
+        <button type="button" class="close" data-dismiss="alert">&times;</button>
+        <%= flash[:notice] %>
+      </div>
+    <% elsif flash.now[:alert] %>
+      <div class="alert alert-danger">
+        <button type="button" class="close" data-dismiss="alert">&times;</button>
+        <%= flash.now[:alert] %>
+      </div>
+    <% elsif flash[:alert] %>
+      <div class="alert alert-warning">
+        <button type="button" class="close" data-dismiss="alert">&times;</button>
+        <%= flash[:alert] %>
+      </div>
+    <% end %>
     <%= yield %>
   </body>
 </html>
