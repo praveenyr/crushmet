@@ -22,6 +22,18 @@
                             </li>
                         </ul>
                         <ul class="nav navbar-nav pull-right">
+                          <% if user_signed_in? %>
+                            <li class="">
+                              <%= link_to edit_user_registration_path do %>
+                                <span class="glyphicon glyphicon-user"></span><%= ' ' + current_user.first_name + ' ' + current_user.last_name %>
+                              <% end %>
+                            </li>
+                            <li class="">
+                              <%= link_to(destroy_user_session_path, method: :delete) do %>
+                                <span class="glyphicon glyphicon-log-out"></span> Signout
+                              <% end %>
+                            </li>
+                          <% else %>
                             <li class="">
                               <%= link_to new_user_session_path do %>
                                 <span class="glyphicon glyphicon-log-in"></span> Login
@@ -32,28 +44,29 @@
                                 <span class="glyphicon glyphicon-user"></span> Register
                               <% end %>
                             </li>
-                        </ul>
+                        <% end %>
+                      </ul>
                     </div>
+                    <% if flash[:notice] %>
+                      <div class="alert alert-success flash-container">
+                        <button type="button" class="close" data-dismiss="alert">&times;</button>
+                        <%= flash[:notice] %>
+                      </div>
+                    <% elsif flash.now[:alert] %>
+                      <div class="alert alert-danger">
+                        <button type="button" class="close" data-dismiss="alert">&times;</button>
+                        <%= flash.now[:alert] %>
+                      </div>
+                    <% elsif flash[:alert] %>
+                      <div class="alert alert-warning">
+                        <button type="button" class="close" data-dismiss="alert">&times;</button>
+                        <%= flash[:alert] %>
+                      </div>
+                    <% end %>
                 </div>
             </nav>
         </div>
     </div>
-    <% if flash[:notice] %>
-      <div class="alert alert-success">
-        <button type="button" class="close" data-dismiss="alert">&times;</button>
-        <%= flash[:notice] %>
-      </div>
-    <% elsif flash.now[:alert] %>
-      <div class="alert alert-danger">
-        <button type="button" class="close" data-dismiss="alert">&times;</button>
-        <%= flash.now[:alert] %>
-      </div>
-    <% elsif flash[:alert] %>
-      <div class="alert alert-warning">
-        <button type="button" class="close" data-dismiss="alert">&times;</button>
-        <%= flash[:alert] %>
-      </div>
-    <% end %>
     <%= yield %>
   </body>
 </html>
