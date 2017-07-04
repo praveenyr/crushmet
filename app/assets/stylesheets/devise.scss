@@ -1,0 +1,64 @@
+/*** devise ***/
+
+.devise {
+  background-color: white;
+  height: 100vh;
+}
+
+.form-container-devise {
+  background-color: lightyellow;
+  padding: 60px;
+}
+
+.form-container-devise input {
+  width: 100%;
+  border-color: black;
+  background-color: lightyellow;
+  border-style: solid;
+  border-width: 1px;
+  padding: 5px;
+  color: black;
+}
+
+.form-container-devise label,
+.form-container-devise em,
+.form-container-devise p {
+  display: inline-block;
+  color: black;
+}
+
+.form-container-devise i {
+  color: black;
+}
+
+.form-container-devise h2,
+.form-container-devise h3 {
+  text-align: center;
+  margin-bottom: 1em;
+  margin-top: 0px;
+  color: black;
+}
+
+.form-container-devise h3 {
+  margin-top: 2em;
+  margin-bottom: 10px;
+}
+
+.form-container-devise span {
+  display: inline-block;
+  color: black;
+  width: 100%;
+  text-align: center;
+}
+
+.form-container-devise .field {
+  margin-bottom: 15px;
+}
+
+.form-container-devise input.btn-form-devise {
+  background-color: #9B4848;
+  color: #fff;
+  padding: 1em;
+  border-style: none;
+  margin-top: 10px;
+}

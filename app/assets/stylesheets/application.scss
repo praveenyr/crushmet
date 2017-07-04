@@ -12,4 +12,33 @@
  *
  *= require_tree .
  *= require_self
+
  */
+ @import "bootstrap-sprockets";
+ @import "bootstrap";
+ @import "devise";
+
+ body {
+   background: #fff;
+ }
+
+// Navigation bars
+
+ .navbar {
+   background: #000000;
+   border: none;
+ }
+
+ .nav>li>a:focus, .nav>li>a:hover {
+  border-bottom: 3px solid transparent;
+  background: rgba(154, 154, 154, 0.27);
+  border-bottom: #f8b42c 4px solid;
+}
+
+.navbar a {
+ color: #fff;
+}
+
+.flash-container {
+  height: 50px;
+}
