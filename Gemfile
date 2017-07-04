@@ -41,6 +41,11 @@ group :development, :test do
   # Adds support for Capybara system testing and selenium driver
   gem 'capybara', '~> 2.13'
   gem 'selenium-webdriver'
+  gem 'rspec-rails'
+  # Call 'byebug' anywhere in the code to stop execution and get a debugger console
+  gem 'binding_of_caller'
+  gem 'better_errors'
+  gem 'pry-rails'
 end
 
 group :development do
@@ -58,3 +63,4 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'bootstrap-sass'
 gem 'devise'
 gem 'mailcatcher'
+gem 'rails-controller-testing'
