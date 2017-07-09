@@ -15,12 +15,11 @@
 
  */
  @import "bootstrap-sprockets";
+ @import "bootswatch/slate/variables";
  @import "bootstrap";
+ @import "bootswatch/slate/bootswatch";
  @import "devise";
 
- body {
-   background: #fff;
- }
 
 // Navigation bars
 
