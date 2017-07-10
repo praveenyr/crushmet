@@ -20,6 +20,13 @@
                                   <span class="glyphicon glyphicon-home"></span> Home
                               <% end %>
                             </li>
+                            <% if user_signed_in? %>
+                            <li>
+                              <%= link_to registered_applications_path do %>
+                                  <span class="glyphicon glyphicon-suitcase"></span> Apps
+                              <% end %>
+                            <% end %>
+                          </li>
                         </ul>
                         <ul class="nav navbar-nav pull-right">
                           <% if user_signed_in? %>
