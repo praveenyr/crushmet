@@ -1,0 +1,26 @@
+<div class="col-md-4 col-md-offset-4" style="margin-top: 30px;">
+  <%= form_for @registered_app do |f| %>
+    <form class="form-horizontal">
+      <fieldset>
+        <div class="form-group">
+          <%= f.label :application, class: "col-lg-2 control-label" %>
+          <div class="col-lg-10">
+            <%= f.text_field :name, class: "form-control", placeholder: "Enter the App Name..." %>
+          </div>
+        </div>
+        <div class="form-group">
+          <%= f.label :application_link, class: "col-lg-2 control-label" %>
+          <div class="col-lg-10">
+            <%= f.text_area :url, class: "form-control", rows: "3", placeholder: "Enter the App URL..." %>
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="col-lg-10 col-lg-offset-2">
+            <%= f.submit "Submit", class: "btn btn-primary" %>
+            <%= f.submit "Cancel", :type => 'reset', class: "btn btn-warning", style: "margin-left: 15px;" %>
+          </div>
+        </div>
+      </fieldset>
+    </form>
+  <% end %>
+</div>
