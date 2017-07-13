@@ -1,0 +1,26 @@
+<div class="row" style="margin-top: 60px;">
+  <div class="col-md-2"></div>
+  <div class="col-md-6">
+    <h1 class="text-center" style="margin: 20px;"><%= @registered_app.name %></h1>
+    <% if @events.count > 0 %>
+       <table class="table table-striped" style="margin: 40px;">
+          <thead style="margin: 20px;">
+            <tr>
+              <th>Event Name</th>
+              <th>Number of Events</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% @events.each do |event_name, event_num| %>
+              <tr>
+                <td><%= event_name %></td>
+                <td><%= event_num.count %></td>
+              </tr>
+           <% end %>
+         </tbody>
+       </table>
+   <% else %>
+     <h5 class="text-center" style="margin: 20px;">No Events received yet!</h5>
+   <% end %>
+  </div>
+</div>
