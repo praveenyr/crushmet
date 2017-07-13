@@ -54,6 +54,23 @@ RSpec.describe RegisteredApplicationsController, type: :controller do
     end
   end
 
+  describe "GET show" do
+    it "returns http success" do
+      get :show, params: { id: @my_app.id }
+      expect(response).to have_http_status(:success)
+    end
+
+    it "renders the #show view" do
+      get :show, params: { id: @my_app.id }
+      expect(response).to render_template :show
+    end
+
+    it "assigns @my_wiki to @wiki" do
+      get :show, params: { id: @my_app.id }
+      expect(assigns(:registered_app)).to eq(@my_app)
+    end
+  end
+
   describe "GET edit" do
     it "returns http success" do
       get :edit, params: { id: @my_app.id }

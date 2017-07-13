@@ -46,6 +46,7 @@ group :development, :test do
   gem 'binding_of_caller'
   gem 'better_errors'
   gem 'pry-rails'
+  gem 'faker'
 end
 
 group :development do
@@ -58,7 +59,6 @@ group :development do
 end
 
 group :test do
-  gem 'faker'
   gem 'factory_girl_rails'
   gem 'simplecov'
   gem 'shoulda'
