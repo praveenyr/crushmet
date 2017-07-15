@@ -3,22 +3,22 @@
 This README would normally document whatever steps are necessary to get the
 application up and running.
 
-Things you may want to cover:
+* Client side javascript to publish events to crushmet
 
-* Ruby version
+Add the following code snippet to your application under /app/assets/javascripts/application.js -
 
-* System dependencies
+var crushmet = {};
 
-* Configuration
+crushmet.report = function(eventName) {
+   var event = { event: { name: eventName }};
 
-* Database creation
+   var request = new XMLHttpRequest();
 
-* Database initialization
+   request.open("POST", "http://localhost:3000/api/events", true);
+   request.setRequestHeader('Content-Type', 'application/json');
+   request.send(JSON.stringify(event));
 
-* How to run the test suite
+  };
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+<!-- Publishes a sample event with eventname "sale" -->
+crushmet.report("sale");
