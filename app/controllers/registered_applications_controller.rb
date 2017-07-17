@@ -12,10 +12,8 @@ class RegisteredApplicationsController < ApplicationController
   end
 
   def show
-    # binding.pry
     @registered_app = RegisteredApplication.find(params[:id])
     @events = @registered_app.events.group_by(&:name)
-    # @events = @registered_app.events.group_by_day(:created_at)
   end
 
   def create

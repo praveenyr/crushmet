@@ -12,11 +12,12 @@
           </thead>
           <tbody>
             <tr>
-              <% @events.each do |event_name, event_arr| %>
+              <!-- <% @events.each do |event_name, event_arr| %>
                   <td><%= event_name %></td>
                   <td><%= event_arr.count %></td>
-                  <!-- <td><%= line_chart event_arr.group_by_day(:created_at).count %></td> -->
-               <% end %>
+                  <td><%= line_chart event_arr.group_by_day(:created_at).count %></td>
+               <% end %> -->
+               <%= pie_chart @registered_app.events.group(:name).count, id: "events-pie-chart" %>
            </tr>
          </tbody>
        </table>
