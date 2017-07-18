@@ -11,12 +11,9 @@
             </tr>
           </thead>
           <tbody>
-            <% @events.each do |event_name, event_num| %>
-              <tr>
-                <td><%= event_name %></td>
-                <td><%= event_num.count %></td>
-              </tr>
-           <% end %>
+            <tr>
+               <%= line_chart @registered_app.events.group(:name).count %>
+           </tr>
          </tbody>
        </table>
    <% else %>

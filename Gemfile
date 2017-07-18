@@ -47,6 +47,7 @@ group :development, :test do
   gem 'better_errors'
   gem 'pry-rails'
   gem 'faker'
+  gem 'pg'
 end
 
 group :development do
@@ -73,3 +74,5 @@ gem 'mailcatcher'
 gem 'rails-controller-testing'
 gem 'bootswatch-rails'
 gem 'rack-cors', :require => 'rack/cors'
+gem 'chartkick'
+gem 'groupdate'

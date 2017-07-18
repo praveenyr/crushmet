@@ -65,6 +65,7 @@ GEM
       rack (>= 1.0.0)
       rack-test (>= 0.5.4)
       xpath (~> 2.0)
+    chartkick (2.2.4)
     childprocess (0.7.1)
       ffi (~> 1.0, >= 1.0.11)
     coderay (1.1.1)
@@ -100,6 +101,8 @@ GEM
     ffi (1.9.18)
     globalid (0.4.0)
       activesupport (>= 4.2.0)
+    groupdate (3.2.0)
+      activesupport (>= 3)
     haml (5.0.1)
       temple (>= 0.8.0)
       tilt
@@ -142,6 +145,7 @@ GEM
     nokogiri (1.8.0)
       mini_portile2 (~> 2.2.0)
     orm_adapter (0.5.0)
+    pg (0.21.0)
     pry (0.10.4)
       coderay (~> 1.1.0)
       method_source (~> 0.8.1)
@@ -292,14 +296,17 @@ DEPENDENCIES
   bootswatch-rails
   byebug
   capybara (~> 2.13)
+  chartkick
   coffee-rails (~> 4.2)
   devise
   factory_girl_rails
   faker
+  groupdate
   jbuilder (~> 2.5)
   jquery-rails
   listen (>= 3.0.5, < 3.2)
   mailcatcher
+  pg
   pry-rails
   puma (~> 3.7)
   rack-cors
