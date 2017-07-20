@@ -36,22 +36,21 @@ For Authentication,I have used the _Devise_ gem which is a flexible authenticati
 #### User Models :
 Users have the ability to register their applications, and applications in turn will publish their respective _events_ to Crushmet for tracking metrics.The ActiveRecord Association _has_many_ is used to establish the relationship between the three entities.
 
-`class User < ApplicationRecord
+ `class User < ApplicationRecord
       devise :database_authenticatable, :registerable, :confirmable,
              :recoverable, :rememberable, :trackable, :validatable
       has_many :registered_applications, dependent: :destroy
-    end
+    end`
 
 
-class RegisteredApplication < ApplicationRecord
-      belongs_to :user
-      has_many :events, dependent: :destroy
-    end
+ `class RegisteredApplication < ApplicationRecord
+    belongs_to :user
+    has_many :events, dependent: :destroy
+  end`
 
- class Event < ApplicationRecord
-       belongs_to :registered_application
-     end
-  `
+ `class Event < ApplicationRecord
+    belongs_to :registered_application
+  end`
 
 ## _Results_
 
