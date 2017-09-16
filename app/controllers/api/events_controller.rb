@@ -14,17 +14,10 @@ class API::EventsController < ApplicationController
     begin
       registered_application = RegisteredApplication.find_by(url: request.env['HTTP_ORIGIN'])
       raise "Registered App error" unless registered_application
+      EventWorker.perform_async(name: event_params[:name], id: registered_application.id)
     rescue StandardError
       render json: "Unregistered application", status: :unprocessable_entity
       return
-    end
-
-    @event = registered_application.events.new(event_params)
-
-    if @event.save
-      render json: @event, status: :created
-    else
-      render json: {errors: @event.errors}, status: :unprocessable_entity
     end
 
     def preflight
